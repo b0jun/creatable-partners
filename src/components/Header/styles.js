@@ -1,11 +1,10 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { theme } from '../../styles/theme';
 
 export const Block = styled.div`
   height: 4rem;
   width: 100%;
-  background: ${(props) => props.theme && theme.palette.header};
+  background: ${(props) => props.theme.palette.header};
   color: white;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
 `;
