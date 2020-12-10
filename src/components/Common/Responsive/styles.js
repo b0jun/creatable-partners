@@ -7,10 +7,6 @@ export const Wrapper = styled.div`
   @media screen and (max-width: ${(props) => props.theme.responsive.wide}) {
     max-width: 1000px;
   }
-  @media screen and (max-width: ${(props) => props.theme.responsive.large}) {
-    // 992px
-    max-width: 800px;
-  }
   @media screen and (max-width: ${(props) => props.theme.responsive.medium}) {
     max-width: 500px;
   }

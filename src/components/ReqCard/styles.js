@@ -1,12 +1,20 @@
 import styled, { css } from 'styled-components';
 
 export const CardBlock = styled.div`
-  width: calc(100% / 3 - 1rem);
-  margin-right: 0.5rem;
-  margin-left: 0.5rem;
+  // 반응형 적용 파트
+  width: calc(100% / 3 - 0.339rem);
+  &:nth-child(3n + 1) {
+    margin-right: 0.5rem;
+  }
+  &:nth-child(3n + 3) {
+    margin-left: 0.5rem;
+  }
   margin-bottom: 0.5rem;
   @media screen and (max-width: ${(props) => props.theme.responsive.wide}) {
     width: calc(100% / 2 - 1rem);
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    margin-bottom: 1rem;
   }
   @media screen and (max-width: ${(props) => props.theme.responsive.medium}) {
     width: 100%;
