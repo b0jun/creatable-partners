@@ -7,7 +7,10 @@ import {
 } from '../types';
 
 function loadReqCardsAPI(data) {
-  return axios.get(`http://localhost:4000/requests`, data);
+  if (data) {
+    return axios.get(`http://localhost:4000/requests?status=${data}`);
+  }
+  return axios.get('http://localhost:4000/requests');
 }
 
 function* loadReqCards(action) {

@@ -6,16 +6,19 @@ import ReqCard from '../ReqCard';
 import { CardWrapper, NoDataBlock } from './styles';
 
 const ReqCardList = () => {
-  const { reqCards, loadReqCardsLoading } = useSelector((state) => state.reqCard);
+  const { reqCards, loadReqCardsLoading, filterdStatus } = useSelector(
+    (state) => state.reqCard,
+  );
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(loadReqCards(''));
-  }, []);
+    dispatch(loadReqCards(filterdStatus));
+  }, [filterdStatus]);
 
   if (reqCards.length === 0 && !loadReqCardsLoading) {
     return <NoDataBlock>조건에 맞는 견적 요청이 없습니다.</NoDataBlock>;
   }
+
   return (
     <>
       {loadReqCardsLoading ? (

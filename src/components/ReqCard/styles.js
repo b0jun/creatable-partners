@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 
 export const CardBlock = styled.div`
+  position: relative;
   // 반응형 적용 파트
   width: calc(100% / 3 - 0.339rem);
   &:nth-child(3n + 1) {
@@ -17,9 +18,6 @@ export const CardBlock = styled.div`
     margin-bottom: 1rem;
   }
   @media screen and (max-width: ${(props) => props.theme.responsive.medium}) {
-    width: 100%;
-  }
-  @media screen and (max-width: ${(props) => props.theme.responsive.small}) {
     width: 100%;
   }
 
@@ -49,8 +47,9 @@ export const CardBlock = styled.div`
     border: 1.8px solid ${(props) => props.theme.palette.cardStatus};
     padding: 0.3rem;
     border-radius: 15px;
-  }
-  .client {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
   }
   .due {
     color: ${(props) => props.theme.palette.cardDue};
@@ -65,7 +64,8 @@ export const CardBlock = styled.div`
 export const TopWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 0.5rem;
+  align-items: center;
+  margin-bottom: 0.8rem;
 `;
 
 export const BottomWrapper = styled.div`

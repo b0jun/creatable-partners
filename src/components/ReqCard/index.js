@@ -13,7 +13,7 @@ const ReqCard = ({ card }) => (
   <CardBlock>
     <TopWrapper>
       <div className="title">{card.title}</div>
-      <div className="status">상담중</div>
+      {card.status === '상담중' && <div className="status">{card.status}</div>}
     </TopWrapper>
     <div className="client item2">{card.client}</div>
     <div className="due item">{card.due}까지 납기</div>
@@ -26,8 +26,8 @@ const ReqCard = ({ card }) => (
         <div>재료</div>
       </ColWrapper>
       <ColWrapper className="card-value">
-        <div>{card.count}개</div>
-        <div>{card.amount}개</div>
+        <div>{card.count ? card.count : 0}개</div>
+        <div>{card.amount ? card.amount : 0}개</div>
         <div>
           {card.method.map((m, i) => (i === card.method.length - 1 ? m : `${m}, `))}
         </div>

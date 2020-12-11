@@ -10,6 +10,9 @@ const GlobalStyles = createGlobalStyle`
   * {
     box-sizing: border-box;
   }
+  body{
+    color: ${(props) => props.theme.palette.cardNormal};
+  }
 `;
 
 export default GlobalStyles;

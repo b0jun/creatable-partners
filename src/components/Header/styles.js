@@ -28,6 +28,9 @@ export const HomeLink = styled(Link)`
   }
 `;
 export const Menu = styled.div`
+  @media screen and (max-width: ${(props) => props.theme.responsive.medium}) {
+    display: none;
+  }
   margin-left: auto;
   display: flex;
   .separator {
@@ -47,4 +50,55 @@ export const MenuItem = styled.div`
     line-height: 2rem;
     margin-right: 0.5rem;
   }
+`;
+
+export const StyledBurger = styled.button`
+  display: none;
+  @media screen and (max-width: ${(props) => props.theme.responsive.medium}) {
+    display: flex;
+  }
+  flex-direction: column;
+  justify-content: space-around;
+  width: 1.8rem;
+  height: 1.8rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+
+  &:focus {
+    outline: none;
+  }
+  margin-right: 1.5rem;
+
+  div {
+    width: 1.8rem;
+    height: 0.25rem;
+    background: white;
+    border-radius: 10px;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 1px;
+  }
+`;
+
+export const SideWrapper = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  transform: ${({ isOpen }) => (isOpen ? 'translateX(0)' : 'translateX(100%)')};
+`;
+
+export const SideMenu = styled.nav`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 100%;
+  background: white;
+  transform: ${({ isOpen }) => (isOpen ? 'translateX(0)' : 'translateX(100%)')};
 `;
